@@ -4,21 +4,9 @@ import {
   NavigationContainer,
   useNavigation,
 } from './src/navigation/NavigationContainer';
-import ViewCompPage from './src/screens/ViewCompPage';
-
-/* 首页：一个跳转按钮，演示 navigation 路由 */
-function HomeScreen(): JSX.Element {
-  const navigation = useNavigation();
-  return (
-    <View style={styles.center}>
-      <Text style={styles.title}>all_in_rn</Text>
-      <Button
-        title="进入 View 组件演示"
-        onPress={() => navigation.navigate('ViewComp')}
-      />
-    </View>
-  );
-}
+import ViewCompPage from './src/screens/example_comp/ViewCompPage';
+import HomePage from './src/screens/HomePage';
+import TextCompPage from './src/screens/example_comp/TextCompPage';
 
 /* 根组件：声明路由表，交给原生路由容器管理 */
 function App(): JSX.Element {
@@ -26,8 +14,9 @@ function App(): JSX.Element {
     <NavigationContainer
       initialRoute="Home"
       routes={{
-        Home: {component: HomeScreen, title: '首页'},
+        Home: {component: HomePage, title: '首页'},
         ViewComp: {component: ViewCompPage, title: 'View 组件演示'},
+        TextComp:{component:TextCompPage,title:"Text演示页"}
       }}
     />
   );

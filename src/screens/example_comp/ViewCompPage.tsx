@@ -17,12 +17,7 @@ import {ScrollView, View, Text, StyleSheet} from 'react-native';
 function ViewCompPage(): JSX.Element {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* ScrollView 作为根容器，内容超出一屏时可滚动查看 */}
-      {/* ============================================================ */}
-      {/* 1. style 属性：给组件设置样式，有两种常见写法                        */}
-      {/* ============================================================ */}
       <Text style={styles.title}>1. style 属性（两种写法）</Text>
-
       {/* 写法 A：引用 StyleSheet.create 里提取出的样式对象（推荐，便于复用/维护） */}
       <View style={styles.card}>
         <Text style={styles.note}>
@@ -41,14 +36,9 @@ function ViewCompPage(): JSX.Element {
         }}>
         <Text style={styles.note}>写法 B：内联 {'{...}'} 对象</Text>
       </View>
-
-      {/* ============================================================ */}
-      {/* 2. FlexBox 弹性布局                                                */}
-      {/* ============================================================ */}
       <Text style={styles.title}>
         2. FlexBox（flexDirection / justifyContent / alignItems / flex）
       </Text>
-      {/* 容器：横向排列，子项在交叉轴居中，主轴均匀分布 */}
       <View
         style={{
           flexDirection: 'row', // 主轴方向：row=横向（默认 column=纵向）
@@ -57,7 +47,6 @@ function ViewCompPage(): JSX.Element {
           height: 90,
           backgroundColor: '#f5f5f5',
         }}>
-        {/* flex 数值决定子项在主轴上所占“比例”，这里是 1 : 2 : 1 */}
         <View
           style={[styles.flexItem, {backgroundColor: '#f44336', flex: 1}]}
         />
@@ -68,31 +57,23 @@ function ViewCompPage(): JSX.Element {
           style={[styles.flexItem, {backgroundColor: '#4caf50', flex: 1}]}
         />
       </View>
-
-      {/* ============================================================ */}
-      {/* 3. backgroundColor 背景色                                        */}
-      {/* ============================================================ */}
       <Text style={styles.title}>
         3. backgroundColor（十六进制 / rgba / 8 位带透明）
       </Text>
       <View style={{flexDirection: 'row'}}>
-        <View style={[styles.colorBox, {backgroundColor: '#ff9800'}]} />{' '}
+        <View style={[styles.colorBox, {backgroundColor: '#ff9800'}]} />
         {/* 十六进制 */}
         <View
           style={[styles.colorBox, {backgroundColor: 'rgb(33,150,243)'}]}
-        />{' '}
+        />
         {/* rgb */}
-        <View style={[styles.colorBox, {backgroundColor: '#9c27b0cc'}]} />{' '}
+        <View style={[styles.colorBox, {backgroundColor: '#9c27b0cc'}]} />
         {/* 8 位十六进制，末两位 cc=80% 不透明 */}
         <View
           style={[styles.colorBox, {backgroundColor: 'rgba(76,175,80,0.5)'}]}
-        />{' '}
+        />
         {/* rgba 半透明 */}
       </View>
-
-      {/* ============================================================ */}
-      {/* 4. border 边框                                                  */}
-      {/* ============================================================ */}
       <Text style={styles.title}>
         4. border（width / color / radius / style）
       </Text>
@@ -107,10 +88,6 @@ function ViewCompPage(): JSX.Element {
           backgroundColor: '#fff',
         }}
       />
-
-      {/* ============================================================ */}
-      {/* 5. shadow 阴影                                                  */}
-      {/* ============================================================ */}
       <Text style={styles.title}>
         5. shadow（iOS 用 shadow*，Android 用 elevation）
       </Text>
@@ -128,10 +105,6 @@ function ViewCompPage(): JSX.Element {
           elevation: 8,
         }}
       />
-
-      {/* ============================================================ */}
-      {/* 6. transform 变换                                               */}
-      {/* ============================================================ */}
       <Text style={styles.title}>
         6. transform（translate / rotate / scale）
       </Text>
@@ -150,10 +123,6 @@ function ViewCompPage(): JSX.Element {
           ]}
         />
       </View>
-
-      {/* ============================================================ */}
-      {/* 7. overflow 溢出裁剪                                            */}
-      {/* ============================================================ */}
       <Text style={styles.title}>7. overflow（hidden 裁剪超出部分）</Text>
       {/* 容器固定 100x60，子方块 120x80 明显超出；overflow:'hidden' 把超出部分裁掉 */}
       <View
@@ -165,10 +134,6 @@ function ViewCompPage(): JSX.Element {
         }}>
         <View style={{width: 120, height: 80, backgroundColor: '#ff5722'}} />
       </View>
-
-      {/* ============================================================ */}
-      {/* 8. opacity 不透明度                                             */}
-      {/* ============================================================ */}
       <Text style={styles.title}>8. opacity（作用于整个 View 及子节点）</Text>
       <View style={{flexDirection: 'row'}}>
         {/* 同一蓝色块，opacity 分别为 0.3 与 1，直观对比 */}
