@@ -7,6 +7,7 @@ import {
 import ViewCompPage from './src/screens/example_comp/ViewCompPage';
 import HomePage from './src/screens/HomePage';
 import TextCompPage from './src/screens/example_comp/TextCompPage';
+import ImageCompPage from './src/screens/example_comp/ImageCompPage';
 
 /* 根组件：声明路由表，交给原生路由容器管理 */
 function App(): JSX.Element {
@@ -16,7 +17,8 @@ function App(): JSX.Element {
       routes={{
         Home: {component: HomePage, title: '首页'},
         ViewComp: {component: ViewCompPage, title: 'View 组件演示'},
-        TextComp:{component:TextCompPage,title:"Text演示页"}
+        TextComp: {component: TextCompPage, title: 'Text演示页'},
+        ImageComp: {component: ImageCompPage, title: 'Image演示页'},
       }}
     />
   );

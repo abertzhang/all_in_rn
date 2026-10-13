@@ -17,6 +17,11 @@ function HomePage(): JSX.Element {
         onPress={() => navigation.navigate('TextComp')}
       />
       <View style={{height: 20}} />
+      <Button
+        title="Image组件演示"
+        onPress={() => navigation.navigate('ImageComp')}
+      />
+      <View style={{height: 20}} />
       <Button title="ScrollView组件演示" />
     </View>
   );
