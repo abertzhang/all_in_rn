@@ -1,0 +1,31 @@
+# 依赖目录（绝不格式化）
+node_modules/
+oh_modules/
+**/Pods/
+
+# 构建产物 / 缓存
+android/.gradle/
+android/app/build/
+ios/build/
+ios/Pods/
+**/build/
+**/.gradle/
+dist/
+coverage/
+.hvigor/
+
+# Harmony / DevEco 专有格式（Prettier 无对应 parser，必须忽略，否则 --check 报错）
+**/*.ets
+**/*.json5
+**/oh-package-lock.json5
+
+# Harmony 构建产物 / DevEco 生成的资源描述符（不应被格式化）
+**/.cxx/
+harmony/**/resources/**
+
+# Xcode 资源目录（自动生成，仅含 JSON 描述，格式化无意义）
+**/*.xcassets/**
+
+# 编辑器 / 工具目录
+.idea/
+.bundle/
