@@ -58,5 +58,73 @@ target 'all_in_rn' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    # glog 0.3.5 的 ios-configure-glog.sh 依赖 autoconf 生成 src/config.h，
+    # 本机若缺 autoconf/automake，configure 不会运行，config.h 只剩 Apple 段，
+    # 缺少 HAVE_PTHREAD 等宏，导致 glog/src/base/mutex.h 报
+    #   "Need to implement mutex.h for your architecture, or #define NO_THREADS"
+    # 且级联出 int64 / GOOGLE_NAMESPACE 等报错。这里在 pod install 后补写完整 config.h。
+    glog_config = File.join(installer.sandbox.root, 'glog', 'src', 'config.h')
+    if File.exist?(File.dirname(glog_config)) && !File.read(glog_config).include?('HAVE_PTHREAD')
+      Pod::UI.puts 'Patching glog config.h (HAVE_PTHREAD missing)'.yellow
+      File.write(glog_config, <<~GLOG_CONFIG)
+        /* config.h.  Generated for glog 0.3.5 on iOS (arm64 / Apple Silicon).
+         * Autoconf 未运行时的等价正确配置（详见 ios-configure-glog.sh）。 */
+        #ifndef GLOG_CONFIG_H
+        #define GLOG_CONFIG_H
+        #define HAVE_STDINT_H 1
+        #define HAVE_STRING_H 1
+        #define HAVE_UNISTD_H 1
+        #define HAVE_STDLIB_H 1
+        #define HAVE_MEMORY_H 1
+        #define HAVE_STRINGS_H 1
+        #define HAVE_INTTYPES_H 1
+        #define HAVE_SYS_TYPES_H 1
+        #define HAVE_SYS_STAT_H 1
+        #define HAVE_SYS_TIME_H 1
+        #define HAVE_SYSLOG_H 1
+        #define HAVE_PTHREAD_H 1
+        #define HAVE_EXT_HASH_MAP 1
+        #define HAVE_EXT_HASH_SET 1
+        #define HAVE_TR1_UNORDERED_MAP 1
+        #define HAVE_PTHREAD 1
+        #define HAVE_PTHREADS 1
+        #define HAVE_RWLOCK 1
+        #define HAVE___BUILTIN_EXPECT 1
+        #define HAVE___SYNC_VAL_COMPARE_AND_SWAP 1
+        #define HAVE_SNPRINTF 1
+        #define HAVE_VSNPRINTF 1
+        #define HAVE_VASPRINTF 1
+        #define HAVE_FFS 1
+        #define HAVE_LOG2 1
+        #define HAVE_VA_COPY 1
+        #define VA_COPY va_copy
+        #define HAVE_WNO_UNUSED_PARAMETER 1
+        #define GOOGLE_NAMESPACE google
+        #define GLOG_NAMESPACE google
+        #define GLOG_USE_GOOGLE_NAMESPACE 1
+        #define _START_GOOGLE_NAMESPACE_ namespace google {
+        #define _END_GOOGLE_NAMESPACE_ }
+        #define SIZEOF_VOID_P 8
+        #define SIZEOF_INT 4
+        #define SIZEOF_LONG 8
+        #define SIZEOF_LONG_LONG 8
+        #define STDC_HEADERS 1
+        #define HAVE_STDIO_H 1
+        #define GLOG_DLL_DECL
+        #ifdef __APPLE__
+        #include <TargetConditionals.h>
+        #include <Availability.h>
+        #endif
+        #undef HAVE_UCONTEXT_H
+        #undef PC_FROM_UCONTEXT
+        #if defined(__x86_64__)
+        #define PC_FROM_UCONTEXT uc_mcontext->__ss.__rip
+        #elif defined(__i386__)
+        #define PC_FROM_UCONTEXT uc_mcontext->__ss.__eip
+        #endif
+        #endif /* GLOG_CONFIG_H */
+      GLOG_CONFIG
+    end
   end
 end

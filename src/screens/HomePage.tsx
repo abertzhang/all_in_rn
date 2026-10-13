@@ -22,7 +22,25 @@ function HomePage(): JSX.Element {
         onPress={() => navigation.navigate('ImageComp')}
       />
       <View style={{height: 20}} />
-      <Button title="ScrollView组件演示" />
+      <Button
+        title="ScrollView组件演示"
+        onPress={() => navigation.navigate('ScrollViewComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Button组件演示"
+        onPress={() => navigation.navigate('ButtonComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="TextInput组件演示"
+        onPress={() => navigation.navigate('TextInputComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="FlatList组件演示"
+        onPress={() => navigation.navigate('FlatListComp')}
+      />
     </View>
   );
 }
