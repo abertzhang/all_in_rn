@@ -42,7 +42,9 @@ import UseStateExample from './src/screens/state/UseStateExample';
 import UseEffectExample from './src/screens/state/UseEffectExample';
 import ZustandExample from './src/screens/state/ZustandExample';
 import ReduxExample from './src/screens/state/ReduxExample';
-import StateHomePage from './src/screens/state/StateHome';
+import StatePage from './src/screens/state/StatePage';
+import ThirdPkgPage from './src/screens/third_pkg/ThirdPkgPage';
+import TopTipPage from './src/screens/top_tip/TopTipPage';
 
 /* 根组件：声明路由表，交给原生路由容器管理 */
 function App(): JSX.Element {
@@ -204,8 +206,16 @@ function App(): JSX.Element {
           title: 'Redux 演示页',
         },
         StateHome: {
-          component: StateHomePage,
+          component: StatePage,
           title: '状态管理',
+        },
+        ThirdPkg: {
+          component: ThirdPkgPage,
+          title: '三方库',
+        },
+        TopTip: {
+          component: TopTipPage,
+          title: 'TopTip',
         },
       }}
     />

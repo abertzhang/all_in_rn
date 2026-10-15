@@ -196,6 +196,10 @@ function HomePage(): JSX.Element {
         title="状态管理"
         onPress={() => navigation.navigate('StateHome')}
       />
+      <View style={{height: 20}} />
+      <Button title="三方库" onPress={() => navigation.navigate('ThirdPkg')} />
+      <View style={{height: 20}} />
+      <Button title="TopTip" onPress={() => navigation.navigate('TopTip')} />
     </ScrollView>
   );
 }

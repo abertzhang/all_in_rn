@@ -3,7 +3,7 @@ import {ScrollView, View, Button, StyleSheet} from 'react-native';
 import {useNavigation} from '../../navigation/NavigationContainer';
 
 /* 状态管理演示首页：作为 useState / useEffect / Zustand / Redux 的入口菜单 */
-function StateHomePage(): JSX.Element {
+function StatePage(): JSX.Element {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StateHomePage;
+export default StatePage;
