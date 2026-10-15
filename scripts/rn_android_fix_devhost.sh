@@ -12,7 +12,7 @@ set -euo pipefail
 
 DEVICE="${1:-$(adb devices | awk 'NR==2{print $1}')}"
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/sdk/android_sdk}"
-PKG="com.all_in_rn"
+PKG="uk.aknot.all_in_rn"
 PREF="shared_prefs/${PKG}_preferences.xml"
 
 # 本机局域网 IP(优先 en0,回退 en1)

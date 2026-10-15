@@ -86,6 +86,116 @@ function HomePage(): JSX.Element {
         title="KeyboardAvoidingView组件演示"
         onPress={() => navigation.navigate('KeyboardAvoidingViewComp')}
       />
+      <View style={{height: 20}} />
+      <Button
+        title="TouchableWithoutFeedback 演示"
+        onPress={() => navigation.navigate('TouchableWithoutFeedbackComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="TouchableHighlight 演示"
+        onPress={() => navigation.navigate('TouchableHighlightComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="TouchableNativeFeedback 演示"
+        onPress={() => navigation.navigate('TouchableNativeFeedbackComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Pressable 演示"
+        onPress={() => navigation.navigate('PressableComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Alert 演示"
+        onPress={() => navigation.navigate('AlertComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Linking 演示"
+        onPress={() => navigation.navigate('LinkingComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="RefreshControl 演示"
+        onPress={() => navigation.navigate('RefreshControlComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="VirtualizedList 演示"
+        onPress={() => navigation.navigate('VirtualizedListComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="ImageBackground 演示"
+        onPress={() => navigation.navigate('ImageBackgroundComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Animated 演示"
+        onPress={() => navigation.navigate('AnimatedComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="LayoutAnimation 演示"
+        onPress={() => navigation.navigate('LayoutAnimationComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="PanResponder 演示"
+        onPress={() => navigation.navigate('PanResponderComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Slider 演示"
+        onPress={() => navigation.navigate('SliderComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="DatePickerIOS 演示"
+        onPress={() => navigation.navigate('DatePickerIOSComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Video 演示"
+        onPress={() => navigation.navigate('VideoComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Audio 演示"
+        onPress={() => navigation.navigate('AudioComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Camera 演示"
+        onPress={() => navigation.navigate('CameraComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="Permissions 演示"
+        onPress={() => navigation.navigate('PermissionsComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="DeviceInfo 演示"
+        onPress={() => navigation.navigate('DeviceInfoComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="AsyncStorage 演示"
+        onPress={() => navigation.navigate('AsyncStorageComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="NetInfo 演示"
+        onPress={() => navigation.navigate('NetInfoComp')}
+      />
+      <View style={{height: 20}} />
+      <Button
+        title="状态管理"
+        onPress={() => navigation.navigate('StateHome')}
+      />
     </ScrollView>
   );
 }

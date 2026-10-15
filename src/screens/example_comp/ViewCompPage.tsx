@@ -63,9 +63,7 @@ function ViewCompPage(): JSX.Element {
       <View style={{flexDirection: 'row'}}>
         <View style={[styles.colorBox, {backgroundColor: '#ff9800'}]} />
         {/* 十六进制 */}
-        <View
-          style={[styles.colorBox, {backgroundColor: 'rgb(33,150,243)'}]}
-        />
+        <View style={[styles.colorBox, {backgroundColor: 'rgb(33,150,243)'}]} />
         {/* rgb */}
         <View style={[styles.colorBox, {backgroundColor: '#9c27b0cc'}]} />
         {/* 8 位十六进制，末两位 cc=80% 不透明 */}

@@ -1,4 +1,4 @@
-package com.all_in_rn;
+package uk.aknot.all_in_rn;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -35,7 +35,9 @@ function TextCompPage(): JSX.Element {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>1. style 属性（两种写法）</Text>
       {/* 写法 A：引用 StyleSheet.create 里提取的样式（推荐，便于复用/维护） */}
-      <Text style={styles.basicText}>写法 A：style={'{styles.basicText}'}（StyleSheet 提取）</Text>
+      <Text style={styles.basicText}>
+        写法 A：style={'{styles.basicText}'}（StyleSheet 提取）
+      </Text>
       {/* 写法 B：直接传一个内联 style 对象（适合一次性、局部微调） */}
       <Text style={{fontSize: 16, color: '#1565c0', fontWeight: '600'}}>
         写法 B：内联 {'{...}'} 对象
@@ -43,7 +45,9 @@ function TextCompPage(): JSX.Element {
 
       <Text style={styles.title}>2. color（十六进制 / rgb / rgba 透明）</Text>
       <Text style={[styles.row, {color: '#e91e63'}]}>十六进制 #e91e63</Text>
-      <Text style={[styles.row, {color: 'rgb(33,150,243)'}]}>rgb(33,150,243)</Text>
+      <Text style={[styles.row, {color: 'rgb(33,150,243)'}]}>
+        rgb(33,150,243)
+      </Text>
       {/* rgba 末位 0.5 表示半透明 */}
       <Text style={[styles.row, {color: 'rgba(76,175,80,0.5)'}]}>
         rgba(76,175,80,0.5) 半透明
@@ -52,9 +56,15 @@ function TextCompPage(): JSX.Element {
       <Text style={styles.title}>3. fontSize / fontStyle / fontWeight</Text>
       <Text style={[styles.row, {fontSize: 12}]}>fontSize: 12（小）</Text>
       <Text style={[styles.row, {fontSize: 22}]}>fontSize: 22（大）</Text>
-      <Text style={[styles.row, {fontStyle: 'italic'}]}>fontStyle: 'italic'（斜体）</Text>
-      <Text style={[styles.row, {fontWeight: 'bold'}]}>fontWeight: 'bold'（粗体）</Text>
-      <Text style={[styles.row, {fontWeight: '200'}]}>fontWeight: '200'（细）</Text>
+      <Text style={[styles.row, {fontStyle: 'italic'}]}>
+        fontStyle: 'italic'（斜体）
+      </Text>
+      <Text style={[styles.row, {fontWeight: 'bold'}]}>
+        fontWeight: 'bold'（粗体）
+      </Text>
+      <Text style={[styles.row, {fontWeight: '200'}]}>
+        fontWeight: '200'（细）
+      </Text>
 
       <Text style={styles.title}>4. fontFamily / fontVariant</Text>
       <Text style={[styles.row, {fontFamily: 'Cochin'}]}>
@@ -64,8 +74,12 @@ function TextCompPage(): JSX.Element {
         fontVariant: ['small-caps']（小型大写字母变体）
       </Text>
 
-      <Text style={styles.title}>5. letterSpacing（字间距）/ lineHeight（行高）</Text>
-      <Text style={[styles.row, {letterSpacing: 6}]}>letterSpacing: 6（字间距加大）</Text>
+      <Text style={styles.title}>
+        5. letterSpacing（字间距）/ lineHeight（行高）
+      </Text>
+      <Text style={[styles.row, {letterSpacing: 6}]}>
+        letterSpacing: 6（字间距加大）
+      </Text>
       <Text style={[styles.row, {lineHeight: 32}]}>
         lineHeight: 32{'\n'}第二行也会被抬高到行高 32{'\n'}第三行依然保持行高
       </Text>
@@ -74,11 +88,18 @@ function TextCompPage(): JSX.Element {
         6. textAlign（水平对齐）/ textAlignVertical（Android 垂直对齐）
       </Text>
       {/* 容器给定宽度，才能看出 textAlign 的效果 */}
-      <Text style={[styles.block, {textAlign: 'left'}]}>textAlign: 'left' 左对齐</Text>
-      <Text style={[styles.block, {textAlign: 'center'}]}>textAlign: 'center' 居中</Text>
-      <Text style={[styles.block, {textAlign: 'right'}]}>textAlign: 'right' 右对齐</Text>
+      <Text style={[styles.block, {textAlign: 'left'}]}>
+        textAlign: 'left' 左对齐
+      </Text>
+      <Text style={[styles.block, {textAlign: 'center'}]}>
+        textAlign: 'center' 居中
+      </Text>
+      <Text style={[styles.block, {textAlign: 'right'}]}>
+        textAlign: 'right' 右对齐
+      </Text>
       <Text style={[styles.block, {textAlign: 'justify'}]}>
-        textAlign: 'justify' 两端对齐——这段文本会拉伸至左右边缘，常用于段落排版。
+        textAlign: 'justify'
+        两端对齐——这段文本会拉伸至左右边缘，常用于段落排版。
       </Text>
       {/* textAlignVertical 仅 Android 生效；取值 'auto' | 'top' | 'bottom' */}
 
@@ -134,7 +155,8 @@ function TextCompPage(): JSX.Element {
       </Text>
       {/* numberOfLines 是 Text 自身属性（不是 style）；ellipsizeMode 仅在设了 numberOfLines 且文本超长时生效 */}
       <Text numberOfLines={2} style={styles.block}>
-        这段长文本因为 numberOfLines=2 会被截断为两行，超出部分直接丢弃（默认 ellipsizeMode='tail' 不一定生效，需配合 numberOfLines）。
+        这段长文本因为 numberOfLines=2 会被截断为两行，超出部分直接丢弃（默认
+        ellipsizeMode='tail' 不一定生效，需配合 numberOfLines）。
       </Text>
       <Text numberOfLines={1} ellipsizeMode="head" style={styles.block}>
         ellipsizeMode='head'：省略号出现在头部——这是一段非常非常长的文本用于演示头部省略效果。
@@ -174,7 +196,9 @@ function TextCompPage(): JSX.Element {
         maxFontSizeMultiplier=1.2：最多只放大到 1.2 倍（防止大字溢出）
       </Text>
 
-      <Text style={styles.title}>13. onPress / onLongPress（点击 / 长按事件）</Text>
+      <Text style={styles.title}>
+        13. onPress / onLongPress（点击 / 长按事件）
+      </Text>
       <Text
         style={[styles.row, styles.link]}
         onPress={() => setPressCount(c => c + 1)} // 单击
@@ -190,30 +214,35 @@ function TextCompPage(): JSX.Element {
         14. selectable / selectionColor / suppressHighlighting（可选中）
       </Text>
       <Text selectable={true} selectionColor="#ff9800" style={styles.row}>
-        selectable + selectionColor：长按可选中复制，选中高亮为橙色（iOS 用 selectionColor）
+        selectable + selectionColor：长按可选中复制，选中高亮为橙色（iOS 用
+        selectionColor）
       </Text>
-      <Text
-        selectable={true}
-        suppressHighlighting={true}
-        style={styles.row}>
+      <Text selectable={true} suppressHighlighting={true} style={styles.row}>
         suppressHighlighting=true：即便可点击也不显示按压高亮（iOS）
       </Text>
 
-      <Text style={styles.title}>15. textBreakStrategy（Android 断行策略）</Text>
+      <Text style={styles.title}>
+        15. textBreakStrategy（Android 断行策略）
+      </Text>
       {/* textBreakStrategy 是 Text 属性，仅 Android 生效 */}
       <Text textBreakStrategy="balanced" style={styles.block}>
-        textBreakStrategy='balanced'：Android 上尽量让各行长度均衡（另有 'simple' / 'highQuality'）。
+        textBreakStrategy='balanced'：Android 上尽量让各行长度均衡（另有
+        'simple' / 'highQuality'）。
       </Text>
 
       <Text style={styles.title}>16. onTextLayout（排版回调，可获取行数）</Text>
       <Text
         style={styles.block}
         onTextLayout={e => setLineCount(e.nativeEvent.lines.length)}>
-        这段文本会被排版成多行，onTextLayout 回调会把实际行数写进下面的说明里。多写几句让内容足够长以产生换行效果，便于观察 lines.length 的变化。
+        这段文本会被排版成多行，onTextLayout
+        回调会把实际行数写进下面的说明里。多写几句让内容足够长以产生换行效果，便于观察
+        lines.length 的变化。
       </Text>
       <Text style={styles.note}>实际排出来的行数：{lineCount}</Text>
 
-      <Text style={styles.title}>17. 嵌套 Text 与样式继承（Text 独有核心特性）</Text>
+      <Text style={styles.title}>
+        17. 嵌套 Text 与样式继承（Text 独有核心特性）
+      </Text>
       {/* 外层 Text 的样式会被内层 Text 继承，内层可覆盖任意字段 */}
       <Text style={styles.parentText}>
         外层文本（黑色 16 号）

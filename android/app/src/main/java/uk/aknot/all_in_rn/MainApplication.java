@@ -1,4 +1,4 @@
-package com.all_in_rn;
+package uk.aknot.all_in_rn;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

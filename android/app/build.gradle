@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.all_in_rn"
+    namespace "uk.aknot.all_in_rn"
     defaultConfig {
-        applicationId "com.all_in_rn"
+        applicationId "uk.aknot.all_in_rn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
