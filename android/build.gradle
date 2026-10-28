@@ -11,6 +11,13 @@ buildscript {
         ndkVersion = "23.1.7779620"
     }
     repositories {
+        // 阿里云镜像放在最前：国内直连 Maven Central/Google 慢且易超时
+        // （bcprov 等 classpath 依赖曾在此 Read timed out）
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        // 官方源保留兜底（镜像未覆盖的走这里）
         google()
         mavenCentral()
     }
